@@ -10,10 +10,6 @@ app.set('views', __dirname + '/public');
 
 app.set('view engine', 'html');
 
-
-
-
-
 var friends = [
   { name: 'zhao',tel: '12338999' },
   { name: 'qian',tel: '56898009' },
@@ -21,10 +17,6 @@ var friends = [
   { name: 'li',tel: '900-88898' },
  ]
 
-var contract = [
-	
-
-]
 
 app.use('/about',require('./about').about);
 app.use('/contract',require('./contract').contract);
