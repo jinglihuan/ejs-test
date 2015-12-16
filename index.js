@@ -2,22 +2,17 @@ var express = require('express');
 
 var path = require("path");
 
-var app = module.exports = express();
+var app = express();
 
 var ejs = require('ejs').__express;
-
-var multer = require('multer');
-var upload = multer({
-  dest: './uploads/'
-});
 
 app.engine('.html', ejs);
 
 app.set('views', path.join(__dirname, '/public'));
 
-console.log(app.get('views'));
-
 app.set('view engine', 'html');
+
+app.use('/images', express.static(__dirname + '/images'));
 
 var friends = [{
   name: 'zhao',
