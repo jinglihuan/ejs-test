@@ -1,11 +1,5 @@
-var express = require('express');
-
-var app = module.exports = express();
-
-var app = express.Router();
-
 exports.about = function(req, res) {
-	res.render('about')
+	res.render('about');
 };
 
 // exports.show = function(req, res, next){

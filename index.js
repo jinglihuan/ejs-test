@@ -1,29 +1,44 @@
 var express = require('express');
 
+var path = require("path");
+
 var app = module.exports = express();
 
 var ejs = require('ejs').__express;
 
+var multer = require('multer');
+var upload = multer({
+  dest: './uploads/'
+});
+
 app.engine('.html', ejs);
 
-app.set('views', __dirname + '/public');
+app.set('views', path.join(__dirname, '/public'));
+
+console.log(app.get('views'));
 
 app.set('view engine', 'html');
 
-var friends = [
-  { name: 'zhao',tel: '12338999' },
-  { name: 'qian',tel: '56898009' },
-  { name: 'sun',tel: '67989898' },
-  { name: 'li',tel: '900-88898' },
- ]
+var friends = [{
+  name: 'zhao',
+  tel: '12338999'
+}, {
+  name: 'qian',
+  tel: '56898009'
+}, {
+  name: 'sun',
+  tel: '67989898'
+}, {
+  name: 'li',
+  tel: '900-88898'
+}, ];
 
+app.use('/about', require('./about').about);
+app.use('/contract', require('./contract').contract);
 
-app.use('/about',require('./about').about);
-app.use('/contract',require('./contract').contract);
-app.use('/message',require('./message').message);
+var message = require('./message')(app);
 
-
-app.get('/', function(req, res){
+app.get('/', function(req, res) {
   res.render('friends', {
     friends: friends,
     name: "Jing Lihuan",
@@ -37,4 +52,3 @@ if (!module.parent) {
   app.listen(3000);
   console.log('Express started on port 3000');
 }
-
