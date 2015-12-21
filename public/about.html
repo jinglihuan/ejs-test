@@ -12,3 +12,40 @@
 	<div class="infoDiv" id="infoDiv1" style="display: none; position: absolute; width: 70px; height: 70px; z-index:9999;"></div>
 	b
 </div>
+
+
+
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/style-table.js"></script>
+
+<script type="text/javascript">
+var mouseX;
+var mouseY;
+function show(event,num) {
+	var imgsrc = 'photo.jpg';
+	var infoDiv = document.getElementById('infoDiv'+num);
+	//这个是根据具体情况配置的系数
+	if(num == 1){
+		var top_ratio = 38;
+	}else{
+		var top_ratio = 38 + 50*(num-1);
+	}
+	
+	mouseOver(event);
+    //document.getElementById("a").innerHTML = mouseX+" "+mouseY ;
+    infoDiv.style.display = "block";
+	infoDiv.innerHTML = '<img src="' + imgsrc + '" />';
+    infoDiv.style.left = mouseX + 20 + "px";
+    infoDiv.style.top = mouseY + 10 + top_ratio + "px";    
+}
+function hide(num) {
+	$(".infoDiv").hide("fast");
+    //var infoDiv = document.getElementById('infoDiv'+num).style.display = "none";
+}
+function mouseOver(obj) {
+    e = obj || window.event;
+    mouseX =  e.layerX|| e.offsetX;
+    mouseY =  e.layerY|| e.offsetY; 
+}
+</script>
