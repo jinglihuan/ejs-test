@@ -1,0 +1,13 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+.navbar{
+    background-color: #cf4646;
+    color: #fff;
+    text-align: center;
+}
