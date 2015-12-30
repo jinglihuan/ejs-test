@@ -4,10 +4,22 @@ body{
 }
 a{
     text-decoration: none;
-    color: #fff;
 }
 .navbar{
     background-color: #cf4646;
-    color: #fff;
+    color: #efefef;
     text-align: center;
+}
+#navbar{
+    width: 980px;
+    margin: auto;
+    color: aliceblue;
+}
+.nav{
+    float: right;
+}
+.jumbotron {
+  text-align: center;
+  background-color: #cf4646;
+  color: #fff;
 }

@@ -1,3 +1,5 @@
+
+
 <html>
 <head>
 <title></title>
@@ -10,9 +12,15 @@
 <nav class="navbar navbar-inverse navbar-fixed-top site-navbar">
     <div class="container">
         <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
             <a href="./" class="navbar-brand">Gulp 中文网</a>
         </div>
-        <div>
+        <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li><a href="./">首页</a></li>
                 <li><a href="./">中文文档</a></li>
@@ -25,7 +33,24 @@
         </div>
     </div>
 </nav>
-
+<!--nav end-->
+<!--jumbotron-->
+<header class="jumbotron">
+    <img class="hidden" src="img/gulp.png" width="800" height="600">
+    <h1>
+        <span class="text-hide">
+            "Gulp.js"
+            <span class="logo">
+                <img src="img/gulp-white-text.svg">
+            </span>
+        </span>
+    </h1>
+    <p class="lead">用自动化构建工具增强你的工作流程！</p>
+    <p>
+        <a class="btn btn-lg btn-default btn-getting-started" href="./" role="button">开始使用</a>
+    </p>
+</header>
+    
 
 </body>
 </html>
