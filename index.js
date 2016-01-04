@@ -52,6 +52,7 @@ var friends = [{
 app.use('/about', require('./about').about);
 app.use('/contract', require('./contract').contract);
 app.use('/xiangqing', require('./xiangqing').xiangqing);
+app.use('/docs', require('./docs').docs);
 
 var message = require('./message')(app);
 
