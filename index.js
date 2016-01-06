@@ -33,6 +33,12 @@ app.use('/images', express.static(path.join(__dirname, '/images')));
 // ，你还可以配置多个静态资源目录。比如下边这个就可以用  http://localhost:3000/zhanghong/zh.jpeg 来取出下边的文件
 // app.use('/zhanghong', express.static(__dirname + '/zh'));
 
+app.set('views', path.join(__dirname, '/public'));
+
+app.use('/css', express.static(path.join(__dirname, '/css')));
+app.use('/js', express.static(path.join(__dirname, '/js')));
+//要引入bootstrap要为css和js配置静态资源目录
+
 var friends = [{
   name: 'zhao',
   tel: '12338999'
