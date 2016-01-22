@@ -6,6 +6,69 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="http://cdn.bootcss.com/highlight.js/8.4/styles/monokai_sublime.min.css">
 <link rel="stylesheet" href="css/style.css">
+<style type="text/css">
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4,img, ol, ul,p{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    background: transparent;
+    }
+ul {list-style: none;}
+a {text-decoration: none;}
+.clear{clear: both;}
+:focus{outline:0}
+ ul.scroll {
+    width: 15px;
+    float: right;
+    display:block;
+    position:fixed;
+    top:40%;
+    right:0;
+    position:absolute;
+    margin-top:300px;
+    top:expression(eval(document.documentElement.scrollTop));
+    z-index: 9999;
+    }
+.sct {background: url(images/scroll.png);}
+.scb {background: url(images/scroll.png) 0 40px;}
+.scc {background: url(images/scroll.png) 0 80px;}
+.scroll_t,.scroll_c,.scroll_b{
+    width: 80px;
+    height:40px;
+    line-height:40px;
+    text-align:center;
+    cursor: pointer;
+    border-radius: 20px 0 0 20px;
+    }
+.scroll_t{
+    background: #d03f42;
+    }
+.scroll_b{
+    background: #383838;
+    }
+.scroll_c{
+    background: #467ebd;
+    }
+ul.scroll li {
+    position: relative; 
+    height:40px;
+    float: right;
+    }
+ul.scroll li a{
+    display: block;
+    color:#fff;
+    }
+ul.scroll li div {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    }
+</style>   
+
+
+
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top site-navbar">
@@ -99,6 +162,34 @@
         <p><a href="javascritp:void(0);" target="_blank">京ICP备11008151号</a> | 京公网安备11010802014853</p>
     </div>
 </footer>
+
+<ul class="scroll">
+  <li class="sct"> <a href="#">&nbsp;&nbsp;&nbsp;</a>
+    <div><a class="scroll_t">返回顶部</a></div>
+  </li>
+  <li class="scb"> <a href="#">&nbsp;&nbsp;&nbsp;</a>
+    <div><a class="scroll_b">转到底部</a></div>
+  </li>
+</ul>
+<script type="text/javascript" src="js/jquery.min.js" ></script>
+
+<script type="text/javascript">
+jQuery(document).ready(function($){
+$('.scroll_t').click(function(){$('html,body').animate({scrollTop: '0px'}, 800);}); 
+$('.scroll_b').click(function(){$('html,body').animate({scrollTop: document.body.clientHeight+'px'}, 800);});
+});
+
+$(document).ready(function(){ 
+    $("ul.scroll li").hover(function() {
+        $(this).find("div").stop()
+        .animate({right: "0", opacity:1}, "fast")
+        .css("display","block")
+    }, function() {
+        $(this).find("div").stop()
+        .animate({right: "0", opacity: 0}, "fast")
+    });  
+});
+</script>
 </body>
 </html>
 
