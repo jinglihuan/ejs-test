@@ -60,6 +60,7 @@ app.use('/contract', require('./contract').contract);
 app.use('/xiangqing', require('./xiangqing').xiangqing);
 app.use('/docs', require('./docs').docs);
 app.use('/join', require('./join').join);
+app.use('/login', require('./login').login);
 
 var message = require('./message')(app);
 
